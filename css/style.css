@@ -1,0 +1,803 @@
+@charset "UTF-8";
+
+/* ----------common_START---------- */
+body {
+  background-color:#00b8ff;
+  margin: 0px;
+  width: 100%;
+  height: auto;
+  font-family: "M PLUS Rounded 1c", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro", "Yu Gothic Medium", "游ゴシック";
+  letter-spacing: 0.1em;
+}
+
+div, nav, main, section, dl, dt, dd, form, input, textarea, label, hr, span {
+  display: block;
+}
+
+h1, h2, ul li a {
+  font-family: "ＫＦひま字ふで";
+}
+
+hr {
+  width: 40px;
+  height: 5px;
+  border: 0;
+  border: 1px solid #00b8ff;
+  background-color: #00b8ff;
+  border-radius: 10px;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+ul li {
+  display: inline-block;
+}
+
+ul li a {
+  display: inline-block;
+  color: #00b8ff;
+  font-weight: 600;
+  line-height: 1.5;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.hr_color_White {
+  border: 1px solid #fff;
+  background-color: #fff;
+}
+
+.works_list {
+  transition-duration: 0.5s;
+}
+
+.works_list:hover{
+  box-shadow: 10px 10px 10px #0095cf;
+  transform: translateY(-3%);
+  transition-duration: 0.5s;
+}
+
+.clearfix {
+  width: 100%;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+label {
+  text-align: center;
+  margin: 20px auto 10px;
+  font-weight: bold;
+}
+
+footer a:hover {
+  opacity: 0.8;
+}
+/* ----------common_END---------- */
+
+/* mobile_style */
+@media screen and (max-width: 768px){
+/* ----------mobile_common_START---------- */
+h1 {
+  position: absolute;
+  top: 2em;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  color: #fff;
+  font-size: 6vw;
+}
+
+h2 {
+  font-size: 2.5em;
+  font-weight: 900;
+  text-align: center;
+}
+
+hr {
+  margin: 2% auto 14%;
+}
+
+/* ----------mobile_common_END---------- */
+
+/* ----------mobile_header_START---------- */
+#pc {
+  display: none;
+}
+
+#mobile {
+  position: fixed;
+  background-color: rgba(0,184,255,0.5);
+  top: 10px;
+  right: 10px;
+  z-index: 99;
+  border-radius: 5px;
+  padding: 3%;
+}
+
+#mobile.active {
+  background-color: rgba(0,184,255,0);
+}
+/* ----------moboile_header_END---------- */
+
+/* ----------hambager_button_START---------- */
+.btn_trigger {
+  position: relative;
+  width: 30px;
+  height: 28px;
+  cursor: pointer;
+  z-index: 3;
+}
+.btn_trigger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+.btn_trigger, .btn_trigger span {
+  display: inline-block;
+  transition: all .5s;
+  box-sizing: border-box;
+}
+.btn_trigger span:nth-of-type(1) {
+  top: 0;
+}
+.btn_trigger span:nth-of-type(2) {
+  top: 12px;
+}
+.btn_trigger span:nth-of-type(3) {
+  bottom: 0;
+}
+/* ----------hambager_button_END---------- */
+
+/* ----------hambager_menu_START---------- */
+#globalMenuSp_btn::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  content: '';
+  width: 50px;
+  height: 50px;
+  margin: -20px 0 0 -25px;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  transition: all .75s;
+}
+#globalMenuSp_btn.active span:nth-of-type(1) {
+  -webkit-transform: translateY(18px) rotate(-45deg);
+  transform: translateY(18px) rotate(-45deg);
+}
+#globalMenuSp_btn.active span:nth-of-type(2) {
+  left: 60%;
+  opacity: 0;
+  -webkit-animation: active-btn-bar02 .8s forwards;
+  animation: active-btn-bar02 .8s forwards;
+}
+@-webkit-keyframes active-btn-bar02 {
+  100% {
+    height: 0;
+  }
+}
+@keyframes active-btn-bar02 {
+  100% {
+    height: 0;
+  }
+}
+#globalMenuSp_btn.active span:nth-of-type(3) {
+  -webkit-transform: translateY(-7px) rotate(45deg);
+  transform: translateY(-7px) rotate(45deg);
+}
+#globalMenuSp_btn.active::after {
+  -webkit-animation: active-btn .7s .25s forwards;
+  animation: active-btn .7s .25s forwards;
+}
+@-webkit-keyframes active-btn {
+  0% {
+    border-color: transparent;
+    -webkit-transform: rotate(0);
+  }
+  25% {
+    border-color: transparent #fff transparent transparent;
+  }
+  50% {
+    border-color: transparent #fff #fff transparent;
+  }
+  75% {
+    border-color: transparent #fff #fff #fff;
+  }
+  100% {
+    border-color: #fff;
+    -webkit-transform: rotate(-680deg);
+  }
+}
+@keyframes active-btn {
+  0% {
+    border-color: transparent;
+    transform: rotate(0);
+  }
+  25% {
+    border-color: transparent #fff transparent transparent;
+  }
+  50% {
+    border-color: transparent #fff #fff transparent;
+  }
+  75% {
+    border-color: transparent #fff #fff #fff;
+  }
+  100% {
+    border-color: #fff;
+    transform: rotate(-680deg);
+  }
+}
+
+.globalMenuSp_title {
+  margin-top: 15%;
+}
+
+div.globalMenuSp {
+  position: fixed;
+  z-index : 2;
+  top  : 0;
+  left : 0;
+  color: #fff;
+  background: rgba(0,0,0,0.7);
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: none;
+  transition: opacity .6s ease, visibility .6s ease;
+}
+
+div.globalMenuSp ul {
+  margin: 5% auto;
+  padding: 0;
+  width: 100%;
+}
+
+div.globalMenuSp ul li {
+  list-style-type: none;
+  padding: 5%;
+  width: 100%;
+  transition: .4s all;
+}
+
+div.globalMenuSp ul li:hover{
+  background: rgba(0,0,0,0.7);
+}
+
+div.globalMenuSp ul li a {
+  display: block;
+  color: #fff;
+  text-decoration :none;
+}
+
+div.globalMenuSp.active {
+  display: block;
+}
+/* ----------hambager_menu_END---------- */
+
+/* ----------keyVisual_svgAnime_START---------- */
+#kurage {
+  position: relative;
+  height: auto;
+  margin: 0 auto;
+}
+
+#lottie {
+  width:100%;
+  height:100%;
+  display:block;
+  overflow: hidden;
+  transform: translate3d(0,0,0);
+  text-align: center;
+  opacity: 1;
+  z-index: 1;
+}
+/* ----------keyVisual_svgAnime_END---------- */
+
+/* ----------main_START---------- */
+main {
+  margin: 0 auto;
+}
+
+#content {
+  font-size: 14px;
+}
+
+section {
+  padding: 8% 10% 12%;
+}
+
+section.colorWhite {
+  color: #fff;
+}
+
+section.colorBlue {
+  color: #00b8ff;
+}
+
+#about {
+  background-color: #fff;
+}
+
+.about_box,.skill_box dt  {
+  line-height: 3em;
+}
+
+#about_inner dt {
+  border-bottom: 1px #ddd dashed;
+}
+
+#about_inner dd {
+  margin-bottom: 2%;
+}
+
+.skill_list {
+  width: 100%;
+  margin: 2% auto 0;
+}
+
+.skill_list li {
+  float: left;
+  width: 30%;
+  margin: 0 3% 4% 0;
+}
+
+.skill {
+  width: 60%;
+  margin-top: 5%;
+}
+
+#works_inner li {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 6%;
+  background: #fff;
+  position: relative;
+  border-radius: 12px;
+}
+
+#works_inner li:last-child {
+  margin-bottom: 0;
+}
+
+#works_inner img {
+  width: 90%;
+  height: auto;
+}
+
+.works_more {
+  float: right;
+  margin: 15px 8px 4px 0;
+}
+
+.works_more:hover {
+  opacity: 0.8;
+}
+
+.bottom_frame {
+  width: 40%;
+  height: 7px;
+  border: 0;
+  border: 2px solid #00b8ff;
+  border-radius: 18px;
+  background-color: #00b8ff;
+  margin: 14% auto 2%;
+}
+
+.bottom_frame_lc {
+  width: 20%;
+  height: 7px;
+  border: 0;
+  border: 2px solid #00b8ff;
+  border-radius: 18px;
+  background-color: #00b8ff;
+  margin: 0 auto;
+}
+
+.fr_colorWhite {
+  border: 2px solid #fff;
+  background-color: #fff;
+}
+
+#contact {
+  background-color: #fff;
+}
+
+#contact_form {
+  width:100%;
+  margin: 0 auto;
+}
+
+input, textarea {
+    width: 100%;
+  border: solid 1.5px #00b8ff;
+  border-radius: 12px;
+  margin: 0 auto;
+  padding: 5px 10px;
+}
+
+.contact_item input {
+  height: 40px;
+  text-align: center;
+}
+
+.contact_item textarea {
+  height: 200px;
+}
+
+.contact_btn {
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #00b8ff;
+  color: #fff;
+  width: 110px;
+  padding: 10px 10px;
+  margin: 30px 10px 0 0;
+  opacity: 0.7;
+}
+
+.btn:last-child {
+  margin-right: 0;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+/* ----------main_END---------- */
+
+/* ----------footer_START---------- */
+footer {
+  background-color: #00b8ff;
+  padding: 8% 8% 12%;
+  text-align: center;
+}
+
+.ft_icon {
+  width: 7.5%;
+  color: #fff;
+  margin: 0 1%;
+}
+
+.email_size {
+  width: 8.4%;
+}
+
+p {
+  font-size: 10px;
+  color: #fff;
+  margin-top: 3%;
+}
+/* ----------footer_END---------- */
+}
+
+/* pc_style */
+@media screen and (min-width: 769px) {
+/* ----------pc_common_START---------- */
+h1 {
+  position: absolute;
+  top: 3em;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  color: #fff;
+  font-size: 3vw;
+}
+
+h2 {
+  font-size: 2.5em;
+  font-weight: 900;
+  text-align: center;
+}
+
+hr {
+  margin: 10px auto 50px;
+}
+/* ----------pc_common_END---------- */
+
+/* ----------header_START---------- */
+header {
+  position: relative;
+  height: 60px;
+}
+
+nav {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  line-height: 60px;
+  font-size: 14px;
+}
+
+.nav_list {
+  margin-right: 1.5em;
+}
+
+li.nav_list a {
+  position: relative;
+  color: #fff;
+}
+
+li.nav_list a::after {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  transform: scale(0, 1);
+  transform-origin: center top;
+  transition: transform .3s;
+  border-radius: 20px;
+}
+
+li.nav_list a:hover::after {
+  transform: scale(1, 1);
+}
+
+.globalMenuSp {
+  display: none;
+}
+/* ----------header_END---------- */
+
+/* ----------keyVisual_svgAnime_START---------- */
+#kurage {
+  position: relative;
+  width: 70vw;
+  height: auto;
+  margin: 0 auto 60px;
+}
+
+#kurage::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: inset 0 0 40px 40px #00b8ff;
+}
+
+#lottie {
+  width:100%;
+  height:100%;
+  display:block;
+  overflow: hidden;
+  transform: translate3d(0,0,0);
+  text-align: center;
+  opacity: 1;
+}
+/* ----------keyVisual_svgAnime_END---------- */
+
+/* ----------main_START---------- */
+main {
+  margin: 0 auto;
+}
+
+#content {
+  font-size: 14px;
+}
+
+section {
+  padding: 4% 15% 8%;
+}
+
+section.colorWhite {
+  color: #fff;
+}
+
+section.colorBlue {
+  color: #00b8ff;
+}
+
+#about {
+  background-color: #fff;
+}
+
+#about_inner {
+  display: inline-block;
+  width: 100%;
+}
+
+.about_frame {
+  border: 0;
+  border: 4px solid #00b8ff;
+  border-radius: 18px 18px 0px 0px;
+  padding: 6% 3% 3%;
+}
+
+.about_box {
+  width: 530px;
+  margin: 0 auto;
+}
+
+.about_box dd{
+  width: 400px;
+  padding-left: 20px;
+}
+
+.bottom_frame {
+  width: 250px;
+  border: 0;
+  border: 2px solid #00b8ff;
+  border-radius: 18px;
+  background-color: #00b8ff;
+  margin: 10px auto 8px;
+}
+
+.bottom_frame_lc {
+  width: 100px;
+  border: 0;
+  border: 2px solid #00b8ff;
+  border-radius: 18px;
+  background-color: #00b8ff;
+  margin: 0 auto;
+}
+
+.fr_colorWhite {
+  border: 2px solid #fff;
+  background-color: #fff;
+}
+
+.about_box {
+  line-height: 3em;
+}
+
+#about_inner dt, #about_inner dd {
+  float: left;
+}
+
+#about_inner dt {
+  text-align: right;
+  clear: both;
+  width: 110px;
+}
+
+.skill_box {
+  width: 530px;
+  margin: 2% auto 0;
+}
+
+.skill_list {
+  width: 400px;
+  padding-left: 20px;
+  margin-bottom: 5%;
+}
+
+.skill_list li {
+  float: left;
+  width: 30%;
+  margin: 0 3% 4% 0;
+}
+
+.skill {
+  width: 60%;
+  margin-top: 5%;
+}
+
+.list_frame {
+  border: 0;
+  border: 4px solid #fff;
+  border-radius: 18px 18px 0px 0px;
+  padding: 6% 3% 3%;
+}
+
+#works_inner li {
+  width: 30.3%;
+  margin: 0 1.5% 3%;
+  padding: 2%;
+  float: left;
+  background: #fff;
+  position: relative;
+  border-radius: 12px;
+}
+
+#works_inner li:nth-last-child(-n+3) {
+  margin-bottom: 0;
+}
+
+#works_inner img {
+  width: 100%;
+  height: auto;
+}
+
+.works_more {
+  float: right;
+  margin: 3% 2% 0 0;
+}
+
+.works_more:hover {
+  opacity: 0.8;
+}
+
+
+#contact {
+  background-color: #fff;
+}
+
+.contact_frame {
+  border: 0;
+  border: 4px solid #00b8ff;
+  border-radius: 18px 18px 0px 0px;
+  padding: 6% 3% 3%;
+}
+
+#contact_form {
+  width:460px;
+  margin: 0 auto;
+}
+
+input, textarea {
+  width: 350px;
+  border: solid 1.5px #00b8ff;
+  border-radius: 12px;
+  margin: 0 auto;
+  padding: 5px 10px;
+}
+
+.contact_item input {
+  height: 40px;
+  text-align: center;
+}
+
+.contact_item textarea {
+  height: 200px;
+}
+
+.contact_btn {
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #00b8ff;
+  color: #fff;
+  width: 110px;
+  padding: 10px 10px;
+  margin: 30px 10px 50px 0;
+  opacity: 0.7;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+/* ----------main_END---------- */
+
+/* ----------footer_START---------- */
+footer {
+  background-color: #00b8ff;
+  padding: 3%;
+  text-align: center;
+}
+
+.ft_icon {
+  width: 2%;
+  color: #fff;
+  margin: 0 1%;
+}
+
+.email_size {
+  width: 2.4%;
+}
+
+p {
+  font-size: 12px;
+  color: #fff;
+  margin-top: 1%;
+}
+/* ----------footer_END---------- */
+}
