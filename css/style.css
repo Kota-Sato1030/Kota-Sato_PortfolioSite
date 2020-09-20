@@ -14,8 +14,20 @@ div, nav, main, section, dl, dt, dd, form, input, textarea, label, hr, span {
   display: block;
 }
 
-h1, h2, ul li a {
+/* h1, h2, ul li a {
   font-family: "ＫＦひま字ふで";
+} */
+
+.keyvisual_text {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.subTitle {
+  width: 100%;
 }
 
 hr {
@@ -83,25 +95,19 @@ footer a:hover {
 /* mobile_style */
 @media screen and (max-width: 768px){
 /* ----------mobile_common_START---------- */
-h1 {
-  position: absolute;
-  top: 2em;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  text-align: center;
-  color: #fff;
-  font-size: 6vw;
+
+.keyvisual_text {
+  top: 25vw;
+  width: 40%;
 }
 
 h2 {
-  font-size: 2.5em;
-  font-weight: 900;
-  text-align: center;
+   width: 200px;
+  margin: 0 auto;
 }
 
 hr {
-  margin: 2% auto 14%;
+  margin: 10px auto 10%;
 }
 
 /* ----------mobile_common_END---------- */
@@ -240,6 +246,7 @@ hr {
 }
 
 .globalMenuSp_title {
+  width: 200px;
   margin-top: 15%;
 }
 
@@ -280,6 +287,10 @@ div.globalMenuSp ul li a {
   text-decoration :none;
 }
 
+div.globalMenuSp ul li a img {
+  width: 100px;
+}
+
 div.globalMenuSp.active {
   display: block;
 }
@@ -314,7 +325,7 @@ main {
 }
 
 section {
-  padding: 8% 10% 12%;
+  padding: 12% 10% 10%;
 }
 
 section.colorWhite {
@@ -357,7 +368,7 @@ section.colorBlue {
   margin-top: 5%;
 }
 
-#works_inner li {
+.works_frame li {
   width: 100%;
   text-align: center;
   margin-bottom: 6%;
@@ -366,11 +377,11 @@ section.colorBlue {
   border-radius: 12px;
 }
 
-#works_inner li:last-child {
+.works_frame li:last-child {
   margin-bottom: 0;
 }
 
-#works_inner img {
+.works_frame img {
   width: 90%;
   height: auto;
 }
@@ -465,10 +476,24 @@ footer {
   text-align: center;
 }
 
+.logo {
+  width: 8%;
+  margin: 2% auto;
+}
+
+.logo img {
+  width: 100%;
+}
+
+.sns {
+  width: 100%;
+  margin: 0 auto;
+}
+
 .ft_icon {
   width: 7.5%;
   color: #fff;
-  margin: 0 1%;
+  margin: 0 3%;
 }
 
 .email_size {
@@ -478,7 +503,7 @@ footer {
 p {
   font-size: 10px;
   color: #fff;
-  margin-top: 3%;
+  margin-top: 2%;
 }
 /* ----------footer_END---------- */
 }
@@ -486,49 +511,70 @@ p {
 /* pc_style */
 @media screen and (min-width: 769px) {
 /* ----------pc_common_START---------- */
-h1 {
-  position: absolute;
-  top: 3em;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  text-align: center;
-  color: #fff;
-  font-size: 3vw;
+
+.keyvisual_text {
+  top: 17vw;
+  width: 30%;
 }
 
 h2 {
-  font-size: 2.5em;
-  font-weight: 900;
-  text-align: center;
+  width: 200px;
+  margin: 0 auto;
 }
 
 hr {
-  margin: 10px auto 50px;
+  margin: 10px auto 5%;
 }
 /* ----------pc_common_END---------- */
 
 /* ----------header_START---------- */
 header {
-  position: relative;
+position: relative;
   height: 60px;
 }
 
-nav {
+#pc {
+  width: 30%;
   position: absolute;
   top: 0px;
   right: 0px;
-  line-height: 60px;
-  font-size: 14px;
+    
+  /* font-size: 14px; */
 }
 
-.nav_list {
-  margin-right: 1.5em;
+ul.list_box {
+  line-height: 60px;
+    width: 100%;
+  /* width: 570px; */
+}
+
+li.nav_list {
+  width: 22%;
+  /* width: 22%; */
+  /* margin-right: 20px; */
+}
+
+li.nav_list:last-child {
+  margin: 0 2% 0 2%;
 }
 
 li.nav_list a {
   position: relative;
   color: #fff;
+}
+
+li.nav_list a:nth-child(2)::after {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  content: '';
+  width: 20%;
+  height: 3px;
+  background: #fff;
+  transform: scale(0, 0.2);
+  transform-origin: center top;
+  transition: transform .3s;
+  border-radius: 20px;
 }
 
 li.nav_list a::after {
@@ -549,7 +595,11 @@ li.nav_list a:hover::after {
   transform: scale(1, 1);
 }
 
-.globalMenuSp {
+li.nav_list img {
+  width: 100%;
+}
+
+#mobile {
   display: none;
 }
 /* ----------header_END---------- */
@@ -593,7 +643,7 @@ main {
 }
 
 section {
-  padding: 4% 15% 8%;
+  padding: 6% 15% 10%;
 }
 
 section.colorWhite {
@@ -689,14 +739,14 @@ section.colorBlue {
   margin-top: 5%;
 }
 
-.list_frame {
+.works_frame {
   border: 0;
   border: 4px solid #fff;
   border-radius: 18px 18px 0px 0px;
   padding: 6% 3% 3%;
 }
 
-#works_inner li {
+.works_frame li {
   width: 30.3%;
   margin: 0 1.5% 3%;
   padding: 2%;
@@ -706,11 +756,11 @@ section.colorBlue {
   border-radius: 12px;
 }
 
-#works_inner li:nth-last-child(-n+3) {
+.works_frame li:nth-last-child(-n+3) {
   margin-bottom: 0;
 }
 
-#works_inner img {
+.works_frame img {
   width: 100%;
   height: auto;
 }
@@ -784,14 +834,28 @@ footer {
   text-align: center;
 }
 
+.logo {
+  width: 50px;
+  margin: 2% auto;
+}
+
+.logo img {
+  width: 100%;
+}
+
+.sns {
+  width: 30%;
+  margin: 0 auto;
+}
+
 .ft_icon {
-  width: 2%;
+  width: 35px;
   color: #fff;
-  margin: 0 1%;
+  margin: 0 20px;
 }
 
 .email_size {
-  width: 2.4%;
+  width: 40px;
 }
 
 p {
